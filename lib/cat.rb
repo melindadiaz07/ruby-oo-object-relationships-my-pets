@@ -10,10 +10,13 @@ class Cat
     @name = name
     @mood = "nervous"
     @@all_cats << self
+    owner.cats << self
   end
 
   def self.all
     @@all_cats
   end
+
+  
 
 end

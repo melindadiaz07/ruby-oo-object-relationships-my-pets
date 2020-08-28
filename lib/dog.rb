@@ -10,9 +10,10 @@ attr_accessor :owner, :mood
     @owner = owner
     @mood = "nervous"
     @@all_dogs << self
+    owner.dogs << self
   end
 
-def self.all 
+def self.all
   @@all_dogs
 
 end
