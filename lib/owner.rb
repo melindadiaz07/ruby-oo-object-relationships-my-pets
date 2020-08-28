@@ -29,7 +29,7 @@ class Owner
   end
 
   def self.reset_all
-    @@all_owners = []
+   self.all.clear
   end
 
   def cats
@@ -67,16 +67,11 @@ class Owner
   
 
   def sell_pets
-    self.cats.each do |cat|
-      cat.mood = "nervous"
-      cat.owner = nil 
-      end 
-    self.dogs.each do |dog|
-      dog.mood = "nervous"
-      dog.owner = nil
-      
-    end
-    
+    pets = self.cats + self.dogs
+    pets.each do |pet|
+      pet.mood = "nervous"
+      pet.owner = nil
+    end 
   end
  
   def list_pets
